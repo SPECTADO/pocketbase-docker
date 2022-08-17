@@ -18,7 +18,7 @@ Access the webui at `<your-ip>:80`, for more information check out [PocketBase](
 version: "3.7"
 services:
   pocketbase:
-    image: ghcr.io/muchobien/pocketbase:latest
+    image: spectado/pocketbase:latest
     container_name: pocketbase
     restart: unless-stopped
     ports:
