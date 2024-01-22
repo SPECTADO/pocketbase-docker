@@ -16,6 +16,20 @@ Pulling `spectado/pocketbase:latest` will retrieve the correct image for your ar
 
 Access the webui at `<your-ip>:80`, for more information check out [PocketBase](https://pocketbase.io/docs/).
 
+## pb_data & pb_public
+
+There are two configuration & files directories that are mounted into the container. Both folders are mapped to the root inside container.
+
+**pb_data** holds your application config and data and should be mapped to your local file system to persist them!
+
+**pb_public** is optional, and is only used for serving static files.
+
+```yml
+volumes:
+  - /path/to/data:/pb_data
+  - /path/to/public:/pb_public
+```
+
 ## PocketBase
 
 This docker image is a build of [pocketbase.io - Open Source backend for your next SaaS and Mobile app in 1 file](https://pocketbase.io)
@@ -46,4 +60,5 @@ services:
       - "80:80"
     volumes:
       - /path/to/data:/pb_data
+      - /path/to/public:/pb_public
 ```
