@@ -22,7 +22,7 @@ There are two configuration & files directories that are mounted into the contai
 
 **pb_data** holds your application config and data and should be mapped to your local file system to persist them!
 
-**pb_public** is optional, and is only used for serving static files.
+**pb_public** is optional, and is only used for serving static files. (supported in this docker image since version 0.20.7)
 
 ```yml
 volumes:
