@@ -17,4 +17,4 @@ RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
 EXPOSE 80
 
 COPY --from=downloader /pocketbase /usr/local/bin/pocketbase
-ENTRYPOINT ["/usr/local/bin/pocketbase", "serve", "--http=0.0.0.0:80", "--dir=/pb_data --publicDir=/pb_public"]
+ENTRYPOINT ["/usr/local/bin/pocketbase", "serve", "--http=0.0.0.0:80", "--dir=/pb_data", "--publicDir=/pb_public"]
