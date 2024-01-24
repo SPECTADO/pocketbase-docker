@@ -16,18 +16,21 @@ Pulling `spectado/pocketbase:latest` will retrieve the correct image for your ar
 
 Access the webui at `<your-ip>:80`, for more information check out [PocketBase](https://pocketbase.io/docs/).
 
-## pb_data & pb_public
+## pb_data, pb_public and pb_migrations
 
-There are two configuration & files directories that are mounted into the container. Both folders are mapped to the root inside container.
+There are multiple configuration & files directories that are mounted into the container. These folders are mapped to the root inside container.
 
 **pb_data** holds your application config and data and should be mapped to your local file system to persist them!
 
 **pb_public** is optional, and is only used for serving static files. (supported in this docker image since version 0.20.7)
 
+**pb_migrations** is optional, this directory allows you to version your DB structure. See https://pocketbase.io/docs/js-migrations/. (supported in this docker image since version 0.20.8)
+
 ```yml
 volumes:
   - /path/to/data:/pb_data
   - /path/to/public:/pb_public
+  - /path/to/migrations:/pb_migrations
 ```
 
 ## PocketBase
