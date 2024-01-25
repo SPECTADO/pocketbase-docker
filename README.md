@@ -64,4 +64,5 @@ services:
     volumes:
       - /path/to/data:/pb_data
       - /path/to/public:/pb_public
+      - /path/to/migrations:/pb_migrations
 ```
